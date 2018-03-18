@@ -3,10 +3,10 @@
     $url = str_replace("/", "", $url);
 
     $title = [
-        "about_us.php"     => "WHO WE ARE",
+        "about_us.php"     => "<span>WHO</span> WE ARE",
         "services.php"     => "SERVICES",
         "conferences.php"  => "CONFERENCES",
-        "contact_us.php"   => "CONTACT US"
+        "contact_us.php"   => "<span>CONTACT</span> US"
     ];
 
     $background = [
@@ -42,6 +42,9 @@
         font-weight: bold;
         color: #0008A6;
     }
+    #title span span:first-child {
+        font-weight: 400;
+    }
     @media screen and (max-width: 1200px) {
         #title {
             font-size: 300%;
@@ -69,7 +72,7 @@
         display: block;
         width: 4em;
         height: 4px;
-        background-color: #0008A6;
+        background-color: #0008A6!important;
     }
 
     <?php if ($url==""):?>

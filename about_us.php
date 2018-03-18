@@ -51,6 +51,10 @@
                 transition: 0.5s ease;
                 color: #0008A6;
             }
+            #wrapper div.line {
+                width: 240px!important;
+                margin: auto;
+            }
 
             .read-more:hover {
                 color: white;
@@ -73,7 +77,9 @@
                     <hr/>
                     <p class="text-second">
                         <span>WHY JUST<img src="images/about_us_1.png"><span style="font-weight:bold;">?</span></span>
+                        <div class="line"></div>
                     </p>
+                    <br/>
                     <p>
                         ITSI Company provides the most comprehensive,straightforward solutions for setting up and running business-science operations in the country:
                     </p>
@@ -94,7 +100,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-6">
-                            
+
                         </div>
                         <div class="col-xs-6">
 
