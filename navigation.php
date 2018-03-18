@@ -43,7 +43,9 @@
         #navbar ul li:not(.active) a:hover {
             color: #41B7C4!important;
         }
-
+        .dropdown-menu {
+            font-size: 100%;
+        }
         #hidden-dd {
             padding-right: 25px;
             margin-left: -25px;

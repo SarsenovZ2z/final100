@@ -20,48 +20,52 @@
 
 <style>
     header {
-        min-height: 75%!important;
-        height: 75%!important;
+        width: 100%;
+        overflow: hidden;
     }
     #subheader {
-        min-height: 100%!important;
-        height: 100%!important;
-        <?php if ($url!=""):?>
-            background-image: url("images/<?= $background[$url] ?>");
-            background-position: top;
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-        <?php endif; ?>
-        margin: 0!important;
-    }
 
+    }
+    <?php if ($url!=""):?>
+        #page-background {
+            height: 650px;
+            background-image: url("images/<?= $background[$url] ?>");
+            background-position: top right;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    <?php endif; ?>
     #title {
         position: relative;
-        top: 20%;
+        top: 50%;
         font-size: 450%;
         font-weight: bold;
         color: #0008A6;
     }
-
     @media screen and (max-width: 1200px) {
         #title {
-            top: 35%;
             font-size: 300%;
+        }
+        #page-background {
+            height: 400px;
         }
     }
 
     @media screen and (max-width: 768px) {
-      header {
-          min-height: 35%!important;
-          height: 35%!important;
-      }
-      #title {
-          top: 35%;
+        body {
+            font-size: 85%;
+        }
+        #title {
+          top: 60%;
+          margin-left: 10px;
           font-size: 250%;
-      }
+        }
+        #page-background {
+          height: 200px;
+        }
     }
 
-    #line {
+    .line {
         display: block;
         width: 4em;
         height: 4px;
@@ -69,10 +73,6 @@
     }
 
     <?php if ($url==""):?>
-        #slider {
-            min-height: 100%!important;
-            height: 100%!important;
-        }
         .carousel-fade .carousel-inner .item {
             opacity: 0;
             transition-property: opacity;
@@ -103,10 +103,6 @@
             z-index: 2;
         }
 
-        /*
-        WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
-        Need to override the 3.3 new styles for modern browsers & apply opacity
-        */
         @media all and (transform-3d), (-webkit-transform-3d) {
             .carousel-fade .carousel-inner > .item.next,
             .carousel-fade .carousel-inner > .item.active.right {
@@ -134,8 +130,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            padding-top:
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.3);
             width: 100%;
             min-height: 100%!important;
             height: 100%!important;
@@ -155,7 +150,7 @@
         }
         #contact-us {
             display: block;
-            padding: 10px 35px 10px 35px;
+            padding: 10px 35px;
             background-color: #cc883b;
             position: absolute;
             cursor: pointer!important;
@@ -163,11 +158,10 @@
             left: 50%;
             text-decoration: none;
             transform: translate(-50%, -120%);
-            transition: 1s ease;
+            transition: 0.5s ease;
             border-radius: 20px;
             font-weight: bold;
             color: #1108a5;
-            z-index: inherit;
         }
 
         #contact-us:hover {
@@ -187,12 +181,6 @@
             height: auto;
         }
 
-        #line {
-            display: block;
-            width: 4em;
-            height: 4px;
-            background-color: #0008A6;
-        }
         p.goal {
             padding-top: 10px;
             font-weight: 400;
@@ -206,18 +194,18 @@
             #logo-big {
                 width: 600px;
             }
-            #contact-us {
-                transform: translate(-50%, -160%);
-                padding: 5px 15px 5px 15px;
-            }
-            .item-content div:first-child {
-                top: 35%;
-            }
             #title {
                 font-size: 200%;
             }
             p.goal {
-                font-size: 35%;
+                font-size: 44%;
+            }
+            #contact-us {
+                transform: translate(-50%, -140%);
+                padding: 7px 25px;
+            }
+            .item-content div:first-child {
+                top: 35%;
             }
         }
 
@@ -225,25 +213,22 @@
             #logo-big {
                 width: 400px;
             }
-            #title {
-                font-size: 150%;
-            }
-            p.goal {
-                font-size: 50%;
-            }
         }
         @media screen and (max-width: 768px) {
             .carousel-fade .carousel-inner .item img {
                 height: 500px;
             }
             #logo-big {
-                width: 300px;
-            }
-            #title {
-                font-size: 140%;
+                width: 400px;
             }
             #title img {
                 display: none;
+            }
+            #title {
+                font-size: 230%;
+            }
+            p.goal {
+                font-size: 55%;
             }
         }
 
@@ -256,103 +241,102 @@
 
     <?php if ($url!=""):?>
         <div id="subheader" class="row">
-            <div id="title" class="container">
-                <span>
-                    <p>
-                        <?=$title[$url]?>
-                    </p>
-                    <div id="line"></div>
-                </span>
+            <div id="page-background">
+                <div id="title" class="container">
+                    <span>
+                        <p>
+                            <?=$title[$url]?>
+                        </p>
+                        <div class="line"></div>
+                    </span>
+                </div>
             </div>
         </div>
     <?php else:?>
         <div id="subheader" class="row">
-            <div id="slider">
-                <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                  </ol>
+            <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
 
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="item-content">
-                            <img id="logo-big" src="images/logo_big.png">
-                            <a href="/contact_us.php" id="contact-us">CONTACT US</a>
-                        </div>
-                        <img src="images/1.webp" alt="">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                    <div class="item-content">
+                        <img id="logo-big" src="images/logo_big.png">
+                        <a href="/contact_us.php" id="contact-us">CONTACT US</a>
                     </div>
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="container">
-                                <div id="title" class="container">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <span>
-                                                <p>
-                                                    INFORMATION SECURITY &<br/>
-                                                    TECHNICAL SAFETY
-                                                </p>
-                                                <div id="line"></div>
-                                                <p class="goal">
-                                                    Goal: To convey the principles and approaches of  ensuring information security in the financial organizations , regulate and create methodological documents of  executive authorities , to help in mastering practical techniques for building an effective information security system based on the world wide experience of implemention  reliable the information security .
-                                                </p>
-                                            </span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <img src="images/slide2_computer.png">
-                                        </div>
+                    <img src="images/1.webp" alt="">
+                </div>
+                <div class="item">
+                    <div class="item-content">
+                        <div class="container">
+                            <div id="title" class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <span>
+                                            <p>
+                                                INFORMATION SECURITY &<br/>
+                                                TECHNICAL SAFETY
+                                            </p>
+                                            <div class="line"></div>
+                                            <p class="goal">
+                                                Goal: To convey the principles and approaches of  ensuring information security in the financial organizations , regulate and create methodological documents of  executive authorities , to help in mastering practical techniques for building an effective information security system based on the world wide experience of implemention  reliable the information security .
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <img src="images/slide2_computer.png">
                                     </div>
                                 </div>
                             </div>
-                            <a href="/contact_us.php" id="contact-us">READ MORE</a>
                         </div>
-                        <img src="images/2.webp" alt="">
+                        <a href="/contact_us.php" id="contact-us">READ MORE</a>
                     </div>
-
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="container">
-                                <div id="title" class="container">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <span>
-                                                <p>
-                                                    AUTOMATED<br/>
-                                                    SYSTEM IMPLEMENTATION
-                                                </p>
-                                                <div id="line"></div>
-                                                <p class="goal">
-                                                    Goal: The  proposed control system allows to reduce the level of complexity and risks of the project due to the simplicity and flexibility of modern automation technology.
-                                                </p>
-                                            </span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <img src="images/slide3_1.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="/contact_us.php" id="contact-us">READ MORE</a>
-                        </div>
-                        <img src="images/3.webp" alt="">
-                    </div>
-                  </div>
-
-                  <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                    <img src="images/2.webp" alt="">
                 </div>
 
+                <div class="item">
+                    <div class="item-content">
+                        <div class="container">
+                            <div id="title" class="container">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <span>
+                                            <p>
+                                                AUTOMATED<br/>
+                                                SYSTEM IMPLEMENTATION
+                                            </p>
+                                            <div class="line"></div>
+                                            <p class="goal">
+                                                Goal: The  proposed control system allows to reduce the level of complexity and risks of the project due to the simplicity and flexibility of modern automation technology.
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <img src="images/slide3_1.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/contact_us.php" id="contact-us">READ MORE</a>
+                    </div>
+                    <img src="images/3.webp" alt="">
+                </div>
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
         </div>
     <?php endif;?>

@@ -8,10 +8,40 @@
         <title>HOME PAGE</title>
         <style>
             body, html {
-                min-width: 260px;
+                min-width: 260px!important;
                 min-height: 100%!important;
                 height: 100%!important;
                 margin: 0;
+                overflow-x: hidden;
+            }
+            #wrapper {
+                background-color: white;
+                text-align: center;
+            }
+            .blue-title {
+                padding-top: 50px;
+                font-size: 280%;
+                color: #0008A6;
+                font-weight: bold;
+            }
+            .blue-title span {
+                font-weight: 400;
+            }
+            .blue-title div.line {
+                width: 240px!important;
+                margin: auto;
+            }
+            #achievements div {
+                text-align: center;
+                font-size: 110%;
+            }
+            #achievements div.blue-title {
+                font-size: 110%;
+            }
+            #achievements img {
+                width: 100%;
+                height: 100%;
+                padding: 10%;
             }
         </style>
     </head>
@@ -19,15 +49,34 @@
         <?php
             include "header.php";
         ?>
-
-        <section>
-
-            <div class="container">
-
-            </div>
-
-        </section>
-
+        <div id="wrapper">
+            <section>
+                <div class="container">
+                    <div class="blue-title">
+                        <span>OUR</span> ACHIEVEMENTS
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div id="achievements" class="row">
+                        <div class="col-xs-4">
+                            <div class="blue-title">ONE OF THE LEADERS</div>OF SEGMENT
+                            <img src="images/home_1.png">
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="blue-title">MORE THEN 25 YEARS</div>OF EXPERIENCE
+                            <img src="images/home_2.png">
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="blue-title">ONLY PROFESSIONALS</div>IN STAFF
+                            <img src="images/home_3.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
         <?php
             include "footer.php";
         ?>
