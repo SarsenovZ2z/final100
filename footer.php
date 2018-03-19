@@ -24,9 +24,16 @@
       color: white;
 
     }
-  #sub{
-        position: absolute;
-        right: 15px;
+    #sub{
+          position: absolute;
+          right: 15px;
+          transition: 0.5s ease;
+        }
+
+      #sub:hover{
+        background-color: #4fa048;
+        color: white;
+          border-color: white;
       }
 </style>
 
