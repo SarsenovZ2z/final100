@@ -10,11 +10,10 @@
     ];
 
     $background = [
-        ""                 => ["1.webp", "2.webp", "3.webp"],
-        "about_us.php"     => "about_us.webp",
-        "services.php"     => "services.webp",
-        "conferences.php"  => "about_us.webp",
-        "contact_us.php"   => "contact_us.webp"
+        "about_us.php"     => "about_us.png",
+        "services.php"     => "services.png",
+        "conferences.php"  => "about_us.png",
+        "contact_us.php"   => "contact_us.png"
     ];
 ?>
 
@@ -37,7 +36,7 @@
     <?php endif; ?>
     #title {
         position: relative;
-        top: 50%;
+        top: 30%;
         font-size: 450%;
         font-weight: bold;
         color: #0008A6;
@@ -272,7 +271,7 @@
                         <img id="logo-big" src="images/logo_big.png">
                         <a href="/contact_us.php" id="contact-us">CONTACT US</a>
                     </div>
-                    <img src="images/1.webp" alt="">
+                    <img src="images/1.png" alt="">
                 </div>
                 <div class="item">
                     <div class="item-content">
@@ -299,7 +298,7 @@
                         </div>
                         <a href="/contact_us.php" id="contact-us">READ MORE</a>
                     </div>
-                    <img src="images/2.webp" alt="">
+                    <img src="images/2.png" alt="">
                 </div>
 
                 <div class="item">
@@ -327,7 +326,7 @@
                         </div>
                         <a href="/contact_us.php" id="contact-us">READ MORE</a>
                     </div>
-                    <img src="images/3.webp" alt="">
+                    <img src="images/3.png" alt="">
                 </div>
               </div>
 
