@@ -22,7 +22,6 @@
     .tt{
       text-align: center;
       color: white;
-
     }
     #sub{
           position: absolute;
@@ -33,7 +32,7 @@
       #sub:hover{
         background-color: #4fa048;
         color: white;
-          border-color: white;
+        border-color: white;
       }
 </style>
 
@@ -59,7 +58,7 @@
             <textarea class="form-control" rows="1" id="subject" placeholder="SUBJECT"></textarea><br>
             <textarea class="form-control" rows="5" id="comment" placeholder="MESSAGE"></textarea>
             </div>
-            <button id="sub" type="submit" class="btn btn-default">Submit</button>
+            <button id="sub" type="submit" class="btn">Submit</button>
           </form>
         </div>
           <div class="col-sm-2"></div>
