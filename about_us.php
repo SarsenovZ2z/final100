@@ -10,12 +10,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
         <title>HOME PAGE</title>
         <style>
-            body, html {
-                min-width: 260px!important;
-                min-height: 100%!important;
-                height: 100%!important;
-                margin: 0;
-            }
             #wrapper {
                 font-size: 130%;
                 text-align: center;

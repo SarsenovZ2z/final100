@@ -18,6 +18,17 @@
 ?>
 
 <style>
+    body, html {
+        background-color: white;
+        min-width: 260px!important;
+        min-height: 100%!important;
+        height: 100%!important;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    section {
+        background-color: white;
+    }
     header {
         width: 100%;
         overflow: hidden;

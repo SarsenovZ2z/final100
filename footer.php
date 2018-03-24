@@ -3,37 +3,63 @@
 ?>
 
 <style>
-.suret
-{
-   background-image: url("images/fon225.jpg");
-   background-attachment: fixed;
-   /* filter: brightness(50%); */
+
+footer {
+    overflow-y: hidden!important;
 }
+
+body {
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.parallax {
+    background-image: url("images/nurlytau.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+   transform: translateY(100%) translateZ(-600px) scale(3);
+   z-index: -1;
+}
+
 .jumbotronTransp {
-       padding: 30px;
-       margin-bottom: 10px;
-       font-size: 21px;
-       font-weight: 200;
-       line-height: 1;
-       color: inherit;
-       background-color: rgba(0,0,0,0.5);
-       padding-bottom: 100px;
+        background-color: rgba(20,43,132,0.5);
+        padding: 30px;
+        padding-bottom: 100px;
+        font-size: 21px;
+        font-weight: 200;
+        line-height: 1;
+        color: inherit;
     }
     .tt{
-      text-align: center;
-      color: white;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 12px;
     }
     #sub{
-          position: absolute;
-          right: 15px;
-          transition: 0.5s ease;
-        }
+        float: right;
+    }
 
-      #sub:hover{
-        background-color: #4fa048;
-        color: white;
-        border-color: white;
-      }
+    div.copyright {
+        background-color: white;
+    }
+
+    div.copyright p {
+          font-size: 14px;
+          color: blue;
+    }
+    footer hr {
+          width: 250px;
+          background-color: white;
+          height: 2px;
+    }
+
 </style>
 
 <footer>
@@ -41,7 +67,6 @@
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <div class="suret">
       <div class="jumbotronTransp">
         <div class="row">
         <div class="col-sm-2"></div>
@@ -49,27 +74,35 @@
           <div class="tt">
             <h1><span style="font-weight: 400">CONTACT </span>US</h1>
             <hr>
-            <h5><small style="color:white">If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</small></h5>
+            <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
-          <form>
+          <form class="form-horizontal">
             <div class="form-group">
-            <textarea class="form-control" rows="1" id="name" placeholder="NAME*"></textarea><br>
-            <textarea class="form-control" rows="1" id="email" placeholder="EMAIL ADDRESS*"></textarea><br>
-            <textarea class="form-control" rows="1" id="subject" placeholder="SUBJECT"></textarea><br>
-            <textarea class="form-control" rows="5" id="comment" placeholder="MESSAGE"></textarea>
+                <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
             </div>
-            <button id="sub" type="submit" class="btn">Submit</button>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="EMAIL ADDRESS*" required/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" class="form-control" placeholder="SUBJECT"/>
+            </div>
+            <div class="form-group">
+                <textarea name="comment" class="form-control" rows="5" placeholder="MESSAGE"></textarea>
+            </div>
+            <div class="form-group">
+                <button id="sub" type="submit" class="btn btn-success">Submit</button>
+            </div>
           </form>
         </div>
           <div class="col-sm-2"></div>
         </div>
 
       </div>
-    </div>
-
-<br><br><br>
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center copyright">
+        <br/>
       <p>Copyright © 2017 ITSI - Innovation Technologies in Science and Industry.<br>
           All Rights Reserved.</p>
     </div>
-    </footer>
+    <div class="parallax">
+    </div>
+</footer>

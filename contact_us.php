@@ -7,12 +7,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
         <title>HOME PAGE</title>
         <style>
-            body, html {
-                min-width: 260px;
-                min-height: 100%!important;
-                height: 100%!important;
-                margin: 0;
-            }
         </style>
     </head>
     <body>
