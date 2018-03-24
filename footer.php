@@ -9,21 +9,21 @@ footer {
 }
 
 body {
-    -webkit-perspective: 300px;
-    perspective: 300px;
+    /* -webkit-perspective: 600px;
+    perspective: 600px; */
 }
 
 .parallax {
     background-image: url("images/nurlytau.png");
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: cover;
-    position: absolute;
+    background-size: 100% auto;
+    position: relative;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-   transform: translateY(100%) translateZ(-600px) scale(3);
+   transform: translateY(500px) translateZ(-600px) scale(3);
    z-index: -1;
 }
 
@@ -44,6 +44,16 @@ body {
     }
     #sub{
         float: right;
+        padding: 10px 30px;
+        border: 2px solid #0008A6;
+        text-decoration: none!important;
+        transition: 0.5s ease;
+        color: #0008A6;
+    }
+    #sub:hover {
+        color: white;
+        border-color: white;
+        background-color: #41B7C4;
     }
 
     div.copyright {
@@ -59,6 +69,7 @@ body {
           background-color: white;
           height: 2px;
     }
+
 
 </style>
 
@@ -90,7 +101,7 @@ body {
                 <textarea name="comment" class="form-control" rows="5" placeholder="MESSAGE"></textarea>
             </div>
             <div class="form-group">
-                <button id="sub" type="submit" class="btn btn-success">Submit</button>
+                <button id="sub" type="submit">SUBMIT</button>
             </div>
           </form>
         </div>

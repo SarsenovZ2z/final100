@@ -32,8 +32,8 @@
                 font-size: 110%;
             }
             #achievements img {
-                width: 100%;
-                height: 100%;
+                width: 90%;
+                height: 90%;
                 padding: 10%;
             }
         </style>

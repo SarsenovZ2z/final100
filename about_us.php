@@ -13,13 +13,13 @@
             #wrapper {
                 font-size: 130%;
                 text-align: center;
-            }
-            #wrapper div {
                 background-color: white;
+
             }
             @media screen and (min-width: 768px) {
-                #wrapper div:first-child {
+                .firstofT {
                     transform: translate(0, -100px);
+                    background-color: white;
                 }
             }
             .text-first {
@@ -58,7 +58,51 @@
                 border-color: white;
                 background-color: #41B7C4;
             }
-
+            @media screen and (min-width: 768px) {
+              .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+              }
+            }
+            .modal-content {
+                border-radius: 0;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            .modal-dialog {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%)!important;
+            }
+            .modalBtn {
+                display: block;
+                cursor: pointer;
+            }
+            .modalBtn img {
+                border: 2px solid;
+                width: 100%;
+                height: auto;
+            }
+            .modalBtn img:hover {
+                filter:sepia(20%);
+            }
+            .modal-body h4 {
+                font-size: 110%;
+                font-weight: bold;
+                text-align: center;
+            }
+            .modal-body hr {
+                border-radius: 3px;
+                width: 120px;
+                margin: auto;
+            }
+            .modal-body p {
+                padding: 10px;
+                font-size: 150%;
+                color: #0008A6;
+            }
         </style>
     <body>
         <?php
@@ -67,7 +111,7 @@
 
         <div id="wrapper">
             <section>
-                <div class="container">
+                <div class="firstofT container">
                     <p class="text-first">
                         Innovative Technologies in Science and Industry (ITS&I) stands at the forefront of the Kazakhstan innovating sector. As a reputable company, we are a pioneer enabler of innovative, end-to-end solutions of information security technologies, automation of technological cycles in gas, oil industry and nuclear plant stations.
                     </p>
@@ -98,13 +142,56 @@
                     <div class="row">
                         <div class="col-xs-6">
 
+                            <!-- Trigger the modal with a button -->
+                            <a class="modalBtn" role="button" data-toggle="modal" data-target="#leftModal"><img src="images/left.png"/></a>
+
+                            <!-- Modal -->
+                            <div id="leftModal" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-body">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <br/>
+                                      <h4>VISION</h4>
+                                      <hr/>
+
+                                      <p>
+                                      TO BE THE BEST IN INNOVATIVE TECHNOLOGIES CREATED IN SCIENCE AND APPLIED IN INDUSTRY
+                                      </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                         </div>
                         <div class="col-xs-6">
+                            <!-- Trigger the modal with a button -->
+                            <a class="modalBtn" role="button" data-toggle="modal" data-target="#rightModal"><img src="images/right.png"/></a>
+                            <div id="rightModal" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
 
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <br/>
+                                        <h4>MISSION</h4>
+                                        <hr/>
+
+                                        <p>
+                                            TO SERVE FOR PEOPLE AND TO MAKE THEIR LIVES BETTER
+                                        </p>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <br/>
         </div>
 
         <?php

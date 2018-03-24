@@ -26,15 +26,12 @@
         margin: 0;
         overflow-x: hidden;
     }
-    section {
-        background-color: white;
-    }
     header {
         width: 100%;
         overflow: hidden;
     }
     #subheader {
-
+        background-color: white;
     }
     <?php if ($url!=""):?>
         #page-background {
@@ -143,7 +140,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.2);
             width: 100%;
             min-height: 100%!important;
             height: 100%!important;
@@ -251,7 +248,6 @@
     <?php
         include "navigation.php";
     ?>
-
     <?php if ($url!=""):?>
         <div id="subheader" class="row">
             <div id="page-background">

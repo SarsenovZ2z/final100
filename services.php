@@ -7,21 +7,21 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
         <title>HOME PAGE</title>
         <style>
+
+
         </style>
     </head>
     <body>
         <?php
             include "header.php";
         ?>
-
         <section>
-
             <div class="container">
 
+                
+
             </div>
-
         </section>
-
         <?php
             include "footer.php";
         ?>
