@@ -2,54 +2,81 @@
     $url = $_SERVER["REQUEST_URI"];
     $url = str_replace("/", "", $url);
 
+    $bgOpacity = [
+        ""                 => "0",
+        "about_us.php"     => "0",
+        "services.php"     => "0",
+        "conferences.php"  => "0",
+        "contact_us.php"   => "0",
+        "information_security_of_banks.php" => "0.8",
+        "automated_system_implementation.php" => "0.8",
+        "industrial_training_school.php" => "0.8",
+        "mathematical_models.php" => "0.8"
+    ];
+
+
+
+
     $title = [
         "about_us.php"     => "<span>WHO</span> WE ARE",
         "services.php"     => "SERVICES",
         "conferences.php"  => "CONFERENCES",
-        "contact_us.php"   => "<span>CONTACT</span> US"
+        "contact_us.php"   => "CONTACT <span>US</span>",
+        "information_security_of_banks.php" => "Information security <span>of</span><br/> Banks <span>of the 2nd Level</span>",
+        "automated_system_implementation.php" => "<span>Automated system implementation<br/> in industrial Enterprises</span>",
+        "industrial_training_school.php" => "Industrial<br/> Training School",
+        "mathematical_models.php" => "Mathematical models <span>of technological processes in </span>industry<span> and assessments of reliability of technological cycles</span>"
     ];
 
     $background = [
         "about_us.php"     => "about_us.png",
         "services.php"     => "services.png",
         "conferences.php"  => "about_us.png",
-        "contact_us.php"   => "contact_us.png"
+        "contact_us.php"   => "contact_us.png",
+        "information_security_of_banks.php" => "services_bg_1.png",
+        "automated_system_implementation.php" => "services_bg_2.png",
+        "industrial_training_school.php" => "services_bg_3.png",
+        "mathematical_models.php" => "services_bg_4.png"
     ];
 ?>
 
 <style>
     body, html {
-        background-color: white;
         min-width: 260px!important;
         min-height: 100%!important;
         height: 100%!important;
         margin: 0;
         overflow-x: hidden;
     }
+    section {
+        background-color: white;
+    }
     header {
         width: 100%;
         overflow: hidden;
-    }
-    #subheader {
         background-color: white;
     }
     <?php if ($url!=""):?>
         #page-background {
             height: 650px;
             background-image: url("images/<?= $background[$url] ?>");
-            background-position: top right;
+            background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+        }
+        #bg-opacity {
+            height: 100%;
+            background-color: rgba(255, 255, 255, <?=$bgOpacity[$url]?>);
         }
     <?php endif; ?>
     #title {
         position: relative;
         top: 30%;
-        font-size: 450%;
+        font-size: <?=$url=="mathematical_models.php"?250:450?>%;
         font-weight: bold;
         color: #0008A6;
     }
-    #title span span:first-child {
+    #title p span {
         font-weight: 400;
     }
     @media screen and (max-width: 1200px) {
@@ -251,13 +278,15 @@
     <?php if ($url!=""):?>
         <div id="subheader" class="row">
             <div id="page-background">
-                <div id="title" class="container">
-                    <span>
-                        <p>
-                            <?=$title[$url]?>
-                        </p>
-                        <div class="line"></div>
-                    </span>
+                <div id="bg-opacity">
+                    <div id="title" class="container">
+                        <span>
+                            <p>
+                                <?=$title[$url]?>
+                            </p>
+                            <div class="line"></div>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

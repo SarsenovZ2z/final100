@@ -17,13 +17,13 @@ body {
     background-image: url("images/nurlytau.png");
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: 100% auto;
-    position: relative;
+    background-size: cover;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-   transform: translateY(500px) translateZ(-600px) scale(3);
+   /* translateZ(-600px) */
    z-index: -1;
 }
 

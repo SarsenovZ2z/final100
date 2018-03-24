@@ -90,10 +90,10 @@
                     <span id="" class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class=""><a href="#">INFORMATION SECURITY OF BANKS</a></li>
-                  <li class=""><a href="#">AUTOMATED SYSTEM IMPLEMENTATION...</a></li>
-                  <li class=""><a href="#">INDUSTRIAL TRAINING SCHOOL</a></li>
-                  <li class=""><a href="#">MATHEMATICAL MODEL...</a></li>
+                  <li class=""><a href="/information_security_of_banks.php">INFORMATION SECURITY OF BANKS</a></li>
+                  <li class=""><a href="/automated_system_implementation.php">AUTOMATED SYSTEM IMPLEMENTATION...</a></li>
+                  <li class=""><a href="/industrial_training_school.php">INDUSTRIAL TRAINING SCHOOL</a></li>
+                  <li class=""><a href="/mathematical_models.php">MATHEMATICAL MODEL...</a></li>
                 </ul>
             </li>
             <li><a href="/conferences.php">CONFERENCES</a></li>
