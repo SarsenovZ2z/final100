@@ -332,7 +332,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="/contact_us.php" id="contact-us">READ MORE</a>
+                        <a href="/information_security_of_banks.php" id="contact-us">READ MORE</a>
                     </div>
                     <img src="images/2.png" alt="">
                 </div>
@@ -360,7 +360,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="/contact_us.php" id="contact-us">READ MORE</a>
+                        <a href="/automated_system_implementation.php" id="contact-us">READ MORE</a>
                     </div>
                     <img src="images/3.png" alt="">
                 </div>

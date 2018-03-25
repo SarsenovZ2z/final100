@@ -9,6 +9,10 @@ footer {
 }
 
 body {
+    background-image: url(images/nurlytau.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
     /* -webkit-perspective: 600px;
     perspective: 600px; */
 }
@@ -78,6 +82,7 @@ body {
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <?php if ($url!="contact_us.php"): ?>
       <div class="jumbotronTransp">
         <div class="row">
         <div class="col-sm-2"></div>
@@ -87,7 +92,7 @@ body {
             <hr>
             <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
-          <form class="form-horizontal">
+          <form class="form-horizontal" action="sendMail.php" method="get">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
             </div>
@@ -109,11 +114,12 @@ body {
         </div>
 
       </div>
+    <?php endif; ?>
     <div class="container-fluid text-center copyright">
         <br/>
       <p>Copyright © 2017 ITSI - Innovation Technologies in Science and Industry.<br>
           All Rights Reserved.</p>
     </div>
-    <div class="parallax">
-    </div>
+    <!-- <div class="parallax">
+    </div> -->
 </footer>
