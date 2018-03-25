@@ -1,3 +1,22 @@
+<?php
+
+$isMessageSend = false;
+if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
+    $to = "sandybeck.kunakov@gmail.com";//"sandybeck.kunakov@gmail.com";
+    $subject = "ITSI | ".$_POST["subject"];
+    $message = "<p><strong>Name:</strong> ".$_POST["name"]."</p>"
+              ."<p><strong>Email address:</strong> ".$_POST["email"]."</p>"
+              ."<p><strong>Comment:</strong><br/>"
+              .$_POST["comment"]."</p>";
+
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers .= "From: info@itsi.kz\r\n";
+    $headers .= 'Reply-To: '.$_POST["email"].'\r\n';
+    $isMessageSend = mail($to, $subject, $message, $headers);
+}
+
+?>
 <!doctype html>
 <html>
     <head>
@@ -129,9 +148,10 @@
                             <div class="contact-fonm">
                                 <div class="jumbotronTransp">
                                     <div class="row">
-                                        <form class="form-horizontal" action="sendMail.php" method="POST">
+                                        <form class="form-horizontal" action="contact_us.php" method="POST">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
+                                                <input type="hidden" name="action" value="sendMessage"/>
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" name="email" class="form-control" placeholder="EMAIL ADDRESS*" required/>
@@ -162,5 +182,26 @@
         <!-- Google Map -->
         <script src="https://maps.googleapis.com/maps/api/js?region=kz&language=en-US&key=AIzaSyBlfOPXQ5K64Q_W5DUCzzYyLoV0nAbiMB0&callback=initMap"
     async defer></script>
+
+    <?php if ($isMessageSend): ?>
+        <div id="messageSendModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <br/>
+                  <h3><center>SUCCESS</center></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+            jQuery(document).ready(function() {
+                jQuery("#messageSendModal").modal();
+            });
+        </script>
+    <?php endif; ?>
+
     </body>
 </html>

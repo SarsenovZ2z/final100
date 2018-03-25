@@ -56,7 +56,7 @@
         overflow: hidden;
         background-color: white;
     }
-    <?php if ($url!=""):?>
+    <?php if ($url!="" && $url!="index.php"):?>
         #page-background {
             height: 650px;
             background-image: url("images/<?= $background[$url] ?>");
@@ -109,7 +109,7 @@
         background-color: #0008A6!important;
     }
 
-    <?php if ($url==""):?>
+    <?php if ($url=="" || $url=="index.php"):?>
         .carousel-fade .carousel-inner .item {
             opacity: 0;
             transition-property: opacity;
@@ -275,7 +275,7 @@
     <?php
         include "navigation.php";
     ?>
-    <?php if ($url!=""):?>
+    <?php if ($url!="" && $url!="index.php"):?>
         <div id="subheader" class="row">
             <div id="page-background">
                 <div id="bg-opacity">

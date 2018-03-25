@@ -92,9 +92,10 @@ body {
             <hr>
             <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
-          <form class="form-horizontal" action="sendMail.php" method="POST">
+          <form class="form-horizontal" id="form_contact_us" action="index.php" method="POST">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
+                <input type="hidden" name="action" value="sendMessage"/>
             </div>
             <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="EMAIL ADDRESS*" required/>
@@ -106,13 +107,13 @@ body {
                 <textarea name="comment" class="form-control" rows="5" placeholder="MESSAGE"></textarea>
             </div>
             <div class="form-group">
-                <button id="sub" type="submit">SUBMIT</button>
+                <button id="sub">SUBMIT</button>
             </div>
           </form>
         </div>
           <div class="col-sm-2"></div>
         </div>
-	
+
       </div>
     <?php endif; ?>
     <div class="container-fluid text-center copyright">
