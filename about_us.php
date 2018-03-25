@@ -49,6 +49,7 @@
                 color: #0008A6;
             }
             #wrapper div.line {
+                height: 2px!important;
                 width: 240px!important;
                 margin: auto;
             }

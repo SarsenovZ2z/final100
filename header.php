@@ -9,8 +9,8 @@
         "conferences.php"  => "0",
         "contact_us.php"   => "0",
         "information_security_of_banks.php" => "0.8",
-        "automated_system_implementation.php" => "0.8",
-        "industrial_training_school.php" => "0.8",
+        "automated_system_implementation.php" => "0.7",
+        "industrial_training_school.php" => "0.6",
         "mathematical_models.php" => "0.8"
     ];
 
