@@ -92,7 +92,7 @@ body {
             <hr>
             <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
-          <form class="form-horizontal" action="sendMail.php" method="get">
+          <form class="form-horizontal" action="sendMail.php" method="POST">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
             </div>
@@ -112,7 +112,7 @@ body {
         </div>
           <div class="col-sm-2"></div>
         </div>
-
+	
       </div>
     <?php endif; ?>
     <div class="container-fluid text-center copyright">

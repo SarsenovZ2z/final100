@@ -5,7 +5,8 @@
               ."<strong>Email address:</strong> ".$_POST["email"]."<br/>"
               ."<strong>Comment:</strong>"
               ."<p>".$_POST["comment"]."</p>";
-    $headers = 'From: info@itsi.kz' . "\r\n" .
-    'Reply-To: '.$_POST["email"] . "\r\n";
-    var_dump(mail($to, $subject, $message, $headers));
+
+    
+    $headers = 'From: info@itsi.kz' . "\r\n" .'Reply-To: '.$_POST["email"] . "\r\n";
+    //var_dump(mail($to, $subject, $message, $headers));
 ?>

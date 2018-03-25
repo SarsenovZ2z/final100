@@ -108,6 +108,7 @@
                                 marker.addListener('click', function() {
                                     infowindow.open(map, marker);
                                 });
+				infowindow.open(map, marker);
                             }
                             </script>
                             <h4>ONLINE REGISTRATION and OTHER QUESTIONS</h4>
