@@ -82,9 +82,10 @@
                 cursor: pointer;
             }
             .modalBtn img {
-                border: 2px solid;
                 width: 100%;
-                height: auto;
+                height: 230px;
+                object-fit: cover;
+                border: 2px solid;
             }
             .modalBtn img:hover {
                 filter:sepia(20%);
