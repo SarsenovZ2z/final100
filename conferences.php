@@ -10,7 +10,7 @@
             #wrapper {
                 width: 80%;
                 margin: auto;
-                background-color: rgba(232, 232, 232, 0.8);
+                background-color: white;
                 text-align: center;
                 font-size: 130%;
             }
@@ -24,6 +24,7 @@
             }
 
             #wrapper img {
+                max-width: 70%;
                 width: 280px;
                 height: auto;
             }
@@ -36,6 +37,7 @@
 
             @media screen and (min-width: 768px) {
                 #wrapper {
+                    background-color: rgba(232, 232, 232, 0.8);
                     transform: translateY(-150px);
                 }
             }

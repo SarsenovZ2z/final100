@@ -105,6 +105,11 @@
                 font-size: 150%;
                 color: #0008A6;
             }
+            @media screen and (max-width: 768px) {
+                .modalBtn img {
+                    height: 150px;
+                }
+            }
         </style>
     <body>
         <?php

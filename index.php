@@ -42,17 +42,27 @@
                 width: 240px!important;
                 margin: auto;
             }
-            #achievements div {
+            .achievements div {
                 text-align: center;
                 font-size: 110%;
             }
-            #achievements div.blue-title {
+            .achievements div.blue-title {
                 font-size: 110%;
             }
-            #achievements img {
+            .achievements img {
                 width: 90%;
                 height: 90%;
                 padding: 10%;
+            }
+            @media screen and (max-width: 768px) {
+                .achievements {
+                    font-size: 110%;
+                }
+                .achievements img {
+                    width: 100%;
+                    padding: 5%;
+                    padding-bottom: 20%;
+                }
             }
         </style>
     </head>
@@ -71,17 +81,25 @@
             </section>
             <section>
                 <div class="container">
-                    <div id="achievements" class="row">
+                    <div class="achievements" class="row">
                         <div class="col-xs-4">
                             <div class="blue-title">ONE OF THE LEADERS</div>OF SEGMENT
-                            <img src="images/home_1.png">
                         </div>
                         <div class="col-xs-4">
                             <div class="blue-title">MORE THEN 25 YEARS</div>OF EXPERIENCE
-                            <img src="images/home_2.png">
                         </div>
                         <div class="col-xs-4">
                             <div class="blue-title">ONLY PROFESSIONALS</div>IN STAFF
+                        </div>
+                    </div>
+                    <div class="achievements" class="row">
+                        <div class="col-xs-4">
+                            <img src="images/home_1.png">
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="images/home_2.png">
+                        </div>
+                        <div class="col-xs-4">
                             <img src="images/home_3.png">
                         </div>
                     </div>

@@ -4,34 +4,24 @@
 
 <style>
 
-footer {
-    overflow-y: hidden!important;
-}
+    footer {
+        overflow-y: hidden!important;
+    }
 
-body {
-    background-image: url(images/nurlytau.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    /* -webkit-perspective: 600px;
-    perspective: 600px; */
-}
+    .parallax {
+        background-image: url("images/nurlytau.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 700px;
+        z-index: -1;
+    }
 
-.parallax {
-    background-image: url("images/nurlytau.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-   /* translateZ(-600px) */
-   z-index: -1;
-}
-
-.jumbotronTransp {
+    .jumbotronTransp {
         background-color: rgba(20,43,132,0.5);
         padding: 30px;
         padding-bottom: 100px;
@@ -45,6 +35,15 @@ body {
         text-align: center;
         color: white;
         font-size: 12px;
+    }
+    .tt h1 {
+        padding-top: 35px;
+        font-size: 450%;
+    }
+
+    .tt p {
+        padding: 15px;
+        font-size: 120%;
     }
     #sub{
         float: right;
@@ -61,24 +60,34 @@ body {
     }
 
     div.copyright {
+        padding-top: 50px;
         background-color: white;
     }
 
     div.copyright p {
-          font-size: 14px;
-          color: blue;
+        padding-bottom: 20px;
+        font-size: 16px;
+        color: blue;
     }
     footer hr {
           width: 250px;
           background-color: white;
           height: 2px;
     }
-
+    #form_contact_us div.form-group {
+        margin-bottom: 6px;
+    }
+    #form_contact_us  input {
+        height: 40px;
+        padding: 5px;
+    }
+    #form_contact_us textarea {
+        height: 130px;
+    }
 
 </style>
 
 <footer>
-
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -88,7 +97,7 @@ body {
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
           <div class="tt">
-            <h1><span style="font-weight: 400">CONTACT </span>US</h1>
+            <h1>CONTACT <strong>US</strong></h1>
             <hr>
             <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
@@ -115,12 +124,15 @@ body {
         </div>
 
       </div>
+      <!-- <div class="parallax">
+      </div> -->
     <?php endif; ?>
     <div class="container-fluid text-center copyright">
         <br/>
       <p>Copyright © 2017 ITSI - Innovation Technologies in Science and Industry.<br>
           All Rights Reserved.</p>
     </div>
-    <!-- <div class="parallax">
-    </div> -->
+    <script>
+
+    </script>
 </footer>

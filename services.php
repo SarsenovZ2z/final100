@@ -23,7 +23,8 @@
             }
             .cart img {
                 width: 100%;
-                height: 130px;
+                height: 150px;
+                object-fit: cover;
             }
             .description {
                 font-size: 90%;
@@ -47,6 +48,14 @@
             @media screen and (max-width: 992px) {
                 .cart {
                     width: 100%;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .cart {
+                    transform: translateY(-25px);
+                }
+                .description {
+                    font-size: 100%;
                 }
             }
 

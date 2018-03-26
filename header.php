@@ -42,9 +42,7 @@
 
 <style>
     body, html {
-        min-width: 260px!important;
-        min-height: 100%!important;
-        height: 100%!important;
+        min-width: 360px!important;
         margin: 0;
         overflow-x: hidden;
     }
