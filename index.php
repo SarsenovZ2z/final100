@@ -81,7 +81,7 @@
             </section>
             <section>
                 <div class="container">
-                    <div class="achievements" class="row">
+                    <div class="achievements row">
                         <div class="col-xs-4">
                             <div class="blue-title">ONE OF THE LEADERS</div>OF SEGMENT
                         </div>
@@ -92,7 +92,7 @@
                             <div class="blue-title">ONLY PROFESSIONALS</div>IN STAFF
                         </div>
                     </div>
-                    <div class="achievements" class="row">
+                    <div class="achievements row">
                         <div class="col-xs-4">
                             <img src="images/home_1.png">
                         </div>
