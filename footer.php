@@ -13,9 +13,9 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        position: relative;
+        position: fixed;
         left: 0;
-        top: 0;
+        top: 200px;
         width: 100%;
         height: 700px;
         z-index: -1;
@@ -124,8 +124,7 @@
         </div>
 
       </div>
-      <!-- <div class="parallax">
-      </div> -->
+      <div class="parallax"></div>
     <?php endif; ?>
     <div class="container-fluid text-center copyright">
         <br/>
@@ -133,6 +132,28 @@
           All Rights Reserved.</p>
     </div>
     <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            var ticking = false, smoothScrollEffect = 0.1;
+            var footer = document.getElementsByTagName("footer")[0];
+            var content = document.getElementsByClassName("jumbotronTransp")[0];
+            var background = document.getElementsByClassName("parallax")[0];
+            var delta = (document.body.clientHeight - content.offsetTop)*smoothScrollEffect;
 
+            background.style.height = (footer.clientHeight+delta)+"px";
+
+            window.addEventListener("scroll", function(e) {
+                var last = window.scrollY;
+                if (!ticking && last>=content.offsetTop-window.innerHeight) {
+                    window.requestAnimationFrame(function() {
+                        footer_animation(last);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            function footer_animation(last) {
+                background.style.top = (window.innerHeight-footer.clientHeight - (last-content.offsetTop+window.innerHeight)*smoothScrollEffect )+"px";
+            }
+        });
     </script>
 </footer>
