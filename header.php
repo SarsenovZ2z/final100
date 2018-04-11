@@ -22,7 +22,7 @@
         "services.php"     => "SERVICES",
         "conferences.php"  => "CONFERENCES",
         "contact_us.php"   => "CONTACT <span>US</span>",
-        "information_security_of_banks.php" => "Information security <span>of</span><br/> Banks <span>of the 2nd Level</span>",
+        "information_security_of_banks.php" => "Information security <span>of</span><br/> <span>commercial banks</span>",
         "automated_system_implementation.php" => "<span>Automated system implementation<br/> in industrial Enterprises</span>",
         "industrial_training_school.php" => "Industrial<br/> Training School",
         "mathematical_models.php" => "Mathematical models <span>of technological processes in </span>industry<span> and assessments of reliability of technological cycles</span>"

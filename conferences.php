@@ -12,7 +12,7 @@
                 margin: auto;
                 background-color: white;
                 text-align: center;
-                font-size: 130%;
+                font-size: 120%;
             }
 
             #wrapper p {
@@ -60,28 +60,30 @@
                             <img src="images/august_24.png"/>
                             <p>
                                 <strong>24th of August 2018</strong><br/>
-                                AUTOMATED SYSTEM IMPLEM
+                                AUTOMATED SYSTEM IMPLEMENTATION
                             </p>
                         </div>
                         <div class="col-xs-6">
                             <img src="images/august_17.png"/>
                             <p>
                                 <strong>17th of August 2018</strong><br/>
-                                AUTOMATED SYSTEM IMPLEM
+                                INFORMATION SECURITY
                             </p>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-6">
                             <img src="images/july_27.png"/>
                             <p>
                                 <strong>27th of July 2018</strong><br/>
-                                AUTOMATED SYSTEM IMPLEM
+                                AUTOMATED SYSTEM IMPLEMENTATION
                             </p>
                         </div>
                         <div class="col-xs-6">
                             <img src="images/july_20.png"/>
                             <p>
                                 <strong>20th of July 2018</strong><br/>
-                                AUTOMATED SYSTEM IMPLEM
+                                AUTOMATED SYSTEM IMPLEMENTATION
                             </p>
                         </div>
                     </div>
