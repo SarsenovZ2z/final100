@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome-animation.css">
+
         <title>ITSI | CONTACT US</title>
         <style>
             #wrapper {
@@ -149,7 +152,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="button-group btnGroup">
-                                                    <button type="button" class="btn" id="file_attach" onclick="attachFile()">ATTACH FILES</button>
+                                                    <button type="button" class="btn faa-parent animated-hover" id="file_attach" onclick="attachFile()"><i class="fa fa-paperclip fa-lg faa-tada" aria-hidden="true"></i> ATTACH FILES</button>
                                                     <button type="submit" class="btn" id="sub">SUBMIT</button>
                                                 </div>
                                             </div>

@@ -151,15 +151,15 @@
             </div>
             <div class="form-group">
                 <div id="filesPreview"></div>
-                <input type="file" name="file_hidden"  onchange="updateFileList()" multiple="true"/>
             </div>
             <div class="form-group">
                 <div class="button-group btnGroup">
-                    <button type="button" class="btn" id="file_attach" onclick="attachFile()">ATTACH FILES</button>
+                    <button type="button" class="btn faa-parent animated-hover" id="file_attach" onclick="attachFile()"><i class="fa fa-paperclip fa-lg faa-tada" aria-hidden="true"></i> ATTACH FILES</button>
                     <button type="submit" class="btn" id="sub">SUBMIT</button>
                 </div>
             </div>
           </form>
+          <input type="file" name="file_hidden"  onchange="updateFileList()" multiple="true"/>
         </div>
           <div class="col-sm-2"></div>
         </div>
@@ -176,20 +176,23 @@
         var attachedFiles = [];
         jQuery(".contact_form").submit(function() {
             var form = this;
-            var data = jQuery(form).serializeArray();
-            data.push({files: attachedFiles});
-            jQuery.post(
-                "/sendMessage.php",
-                data,
-                function(message, status) {
+            var fd = new FormData(form);
+            for (item in attachedFiles) {
+                fd.append("fileToUpload[]", attachedFiles[item]);
+            }
+            jQuery.ajax({
+                url: "/sendMessage.php",
+                contentType: false,
+                processData: false,
+                type: "POST",
+                data: fd,
+                success: function(message, status) {
                     attachedFiles = [];
                     form.reset();
                     updateFileList();
                     jQuery("#messageSendModal").modal();
-                    console.log(status+" "+message);
                 }
-            );
-            console.log(data);
+            });
             return false;
         });
         function attachFile() {
