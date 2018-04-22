@@ -45,8 +45,10 @@
         padding: 15px;
         font-size: 120%;
     }
-    #sub{
+    .btnGroup {
         float: right;
+    }
+    #sub {
         padding: 10px 30px;
         border: 2px solid #0008A6;
         text-decoration: none!important;
@@ -58,6 +60,19 @@
         border-color: white;
         background-color: #41B7C4;
     }
+    #file_attach {
+        padding: 10px 30px;
+        border: 2px solid #0008A6;
+        text-decoration: none!important;
+        transition: 0.5s ease;
+        color: #0008A6;
+    }
+    #file_attach:hover {
+        color: white;
+        border-color: white;
+        background-color: #41B7C4;
+    }
+
 
     div.copyright {
         padding-top: 50px;
@@ -85,6 +100,25 @@
         height: 130px;
     }
 
+    input[name='file_hidden'] {
+        display: none!important;
+    }
+    #filesPreview div {
+        margin-bottom: 5px;
+        display: block;
+        width: auto;
+        float: right;
+        padding: 5px 15px 5px 20px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    #filesPreview div:not(:last-child) {
+        margin-left: 5px;
+    }
+    .close {
+        padding-left: 5px;
+    }
 </style>
 
 <footer>
@@ -101,7 +135,7 @@
             <hr>
             <p>If you want to know more about our services, please fill up our inquiry form so that we can respond to you as soon as possible.</p>
           </div>
-          <form class="form-horizontal" id="form_contact_us" action="index.php" method="POST">
+          <form class="form-horizontal contact_form" id="form_contact_us" action="" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
                 <input type="hidden" name="action" value="sendMessage"/>
@@ -116,7 +150,14 @@
                 <textarea name="comment" class="form-control" rows="5" placeholder="MESSAGE"></textarea>
             </div>
             <div class="form-group">
-                <button id="sub">SUBMIT</button>
+                <div id="filesPreview"></div>
+                <input type="file" name="file_hidden"  onchange="updateFileList()" multiple="true"/>
+            </div>
+            <div class="form-group">
+                <div class="button-group btnGroup">
+                    <button type="button" class="btn" id="file_attach" onclick="attachFile()">ATTACH FILES</button>
+                    <button type="submit" class="btn" id="sub">SUBMIT</button>
+                </div>
             </div>
           </form>
         </div>
@@ -131,6 +172,59 @@
       <p>Copyright © 2017 ITSI - Innovation Technologies in Science and Industry.<br>
           All Rights Reserved.</p>
     </div>
+    <script>
+        var attachedFiles = [];
+        jQuery(".contact_form").submit(function() {
+            var form = this;
+            var data = jQuery(form).serializeArray();
+            data.push({files: attachedFiles});
+            jQuery.post(
+                "/sendMessage.php",
+                data,
+                function(message, status) {
+                    attachedFiles = [];
+                    form.reset();
+                    updateFileList();
+                    jQuery("#messageSendModal").modal();
+                    console.log(status+" "+message);
+                }
+            );
+            console.log(data);
+            return false;
+        });
+        function attachFile() {
+            var inputFile = document.getElementsByName("file_hidden")[0];
+            inputFile.click();
+        }
+        function updateFileList() {
+            var inputFile = document.getElementsByName("file_hidden")[0];
+            var preview = document.getElementById("filesPreview");
+            for (var i=0;i<inputFile.files.length;++i) {
+                if (attachedFiles.filter(e=>e.name===inputFile.files[i].name).length==0)
+                    attachedFiles.push(inputFile.files[i]);
+            }
+            while(preview.firstChild) {
+                preview.removeChild(preview.firstChild);
+            }
+            for (var i=0;i<attachedFiles.length;++i) {
+                var f = document.createElement("div");
+                var x = document.createElement("span");
+                x.classList.add("close");
+                x.textContent = '×';
+                x.setAttribute("fileid", i);
+                x.onclick = function() {
+                    attachedFiles.splice(this.getAttribute("fileid"), 1);
+                    updateFileList();
+                };
+                f.classList.add("form-control");
+                f.textContent = attachedFiles[i].name;
+                f.appendChild(x);
+                preview.appendChild(f);
+            }
+            inputFile.value = "";
+        }
+    </script>
+<?php if ($url!="contact_us.php"): ?>
     <script>
         window.addEventListener("DOMContentLoaded", function() {
             var ticking = false, smoothScrollEffect = 0.1;
@@ -156,4 +250,6 @@
             }
         });
     </script>
+<?php endif; ?>
+
 </footer>

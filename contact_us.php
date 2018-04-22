@@ -1,22 +1,3 @@
-<?php
-
-$isMessageSend = false;
-if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
-    $to = "sandybeck.kunakov@gmail.com";//"sandybeck.kunakov@gmail.com";
-    $subject = "ITSI | ".$_POST["subject"];
-    $message = "<p><strong>Name:</strong> ".$_POST["name"]."</p>"
-              ."<p><strong>Email address:</strong> ".$_POST["email"]."</p>"
-              ."<p><strong>Comment:</strong><br/>"
-              .$_POST["comment"]."</p>";
-
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    $headers .= "From: info@itsi.kz\r\n";
-    $headers .= 'Reply-To: '.$_POST["email"].'\r\n';
-    $isMessageSend = mail($to, $subject, $message, $headers);
-}
-
-?>
 <!doctype html>
 <html>
     <head>
@@ -148,7 +129,7 @@ if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
                             <div class="contact-fonm">
                                 <div class="jumbotronTransp">
                                     <div class="row">
-                                        <form class="form-horizontal" action="contact_us.php" method="POST">
+                                        <form class="form-horizontal contact_form" action="" method="POST" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" name="name" placeholder="NAME*"/ required>
                                                 <input type="hidden" name="action" value="sendMessage"/>
@@ -163,7 +144,14 @@ if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
                                                 <textarea name="comment" class="form-control" rows="5" placeholder="MESSAGE"></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <button id="sub" type="submit">SUBMIT</button>
+                                                <div id="filesPreview"></div>
+                                                <input type="file" name="file_hidden"  onchange="updateFileList()" multiple="true"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="button-group btnGroup">
+                                                    <button type="button" class="btn" id="file_attach" onclick="attachFile()">ATTACH FILES</button>
+                                                    <button type="submit" class="btn" id="sub">SUBMIT</button>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -174,16 +162,6 @@ if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
                 </div>
             </div>
         </section>
-
-        <?php
-            include "footer.php";
-        ?>
-
-        <!-- Google Map -->
-        <script src="https://maps.googleapis.com/maps/api/js?region=kz&language=en-US&key=AIzaSyBlfOPXQ5K64Q_W5DUCzzYyLoV0nAbiMB0&callback=initMap"
-    async defer></script>
-
-    <?php if ($isMessageSend): ?>
         <div id="messageSendModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
@@ -196,12 +174,14 @@ if (isset($_POST["action"]) && $_POST["action"]=="sendMessage") {
             </div>
           </div>
         </div>
-        <script>
-            jQuery(document).ready(function() {
-                jQuery("#messageSendModal").modal();
-            });
-        </script>
-    <?php endif; ?>
+
+        <?php
+            include "footer.php";
+        ?>
+
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?region=kz&language=en-US&key=AIzaSyBlfOPXQ5K64Q_W5DUCzzYyLoV0nAbiMB0&callback=initMap"
+    async defer></script>
 
     </body>
 </html>
